@@ -89,17 +89,14 @@ export default {
         //           countryCode: this.countryCode,
         //           countryDialingCode: this.countryDialingCode,
         //           countryInitial: this.countryInitial}).then((response) => console.log(response)).catch(error => console.log(error))
-          axios({
-              method: 'POST',
-              url:"http://localhost:8090/api/countries",
-              data = JSON.stringify({
+          axios.post("http://localhost:8090/api/countries", {
                   countryName: this.countryName,
                   countryAlias: this.countryAlias,
                   countryDescription: this.countryDescription,
                   countryCode: this.countryCode,
                   countryDialingCode: this.countryDialingCode,
                   countryInitial: this.countryInitial})
-              }).then((response) => console.log(response) )
+                  .then((response) => console.log(response) )
           .catch(error => console.log(error))
 
 

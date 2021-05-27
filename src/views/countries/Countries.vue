@@ -25,7 +25,7 @@
           
         <CModal
         :title="countryName"
-        color="warning"
+        color="primary"
         @update:show="updateCountry"
         :show.sync="warningModal"
         >
@@ -38,7 +38,7 @@
               />
               <CInput
                 v-model="continentId"
-                type="text"
+                type="number"
                 horizontal
                 :placeholder= "continentId"
               />
@@ -128,6 +128,7 @@ export default {
             countryDialingCode: '',
             countryDescription: '',
             continentId: '',
+
       }
   },
 
@@ -171,17 +172,24 @@ export default {
       },
       updateCountry(status, evt, accept){
           if(accept){
-            //   alert("You have accepted.......");
-                axios.patch(`http://localhost:8090/api/countries/${this.countryId}`, JSON.stringify({
+            const country = {
+                  countryId: this.countryId,
                   countryName: this.countryName,
                   countryAlias: this.countryAlias,
                   countryDescription: this.countryDescription,
                   countryCode: this.countryCode,
                   countryDialingCode: this.countryDialingCode,
                   countryInitial: this.countryInitial,
-                  continentId: this.continentId}))
+                  continentId: this.continentId}
+                  console.log(country)
+            //   alert("You have accepted.......");
+                axios.put(`http://localhost:8090/api/countries/${this.countryId}`, country, {
+                  headers:{
+                    'content-type': 'application/json'
+                }})
                   .then((response) => console.log(response))
                   .catch(error => console.log(error))
+                  
                 }
         //   var country = {};
         //   axios({
