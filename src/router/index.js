@@ -16,6 +16,9 @@ const Widgets = () => import('@/views/widgets/Widgets')
 const Countries = () => import('@/views/countries/Countries')
 const AddCountries = () => import('@/views/countries/AddCountryForm')
 
+const Ideas = () => import('@/views/ideas/Ideas')
+const AddIdeas = () => import('@/views/ideas/AddIdeas')
+
 // Views - Components
 const Cards = () => import('@/views/base/Cards')
 const Forms = () => import('@/views/base/Forms')
@@ -81,6 +84,16 @@ function configRoutes () {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'ideas',
+          name: 'Ideas',
+          component: Ideas
+        },
+        {
+          path: 'add_ideas',
+          name: 'AddIdeas',
+          component: AddIdeas
         },
         {
           path: 'countries',

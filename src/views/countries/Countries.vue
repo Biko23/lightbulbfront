@@ -182,7 +182,7 @@ export default {
                   countryInitial: this.countryInitial,
                   continentId: this.continentId}
                   console.log(country)
-            //   alert("You have accepted.......");
+                  
                 axios.put(`http://localhost:8090/api/countries/${this.countryId}`, country, {
                   headers:{
                     'content-type': 'application/json'
@@ -191,23 +191,6 @@ export default {
                   .catch(error => console.log(error))
                   
                 }
-        //   var country = {};
-        //   axios({
-        //       method: 'PATCH',
-        //       url:`http://localhost:8090/api/countries/${this.countryId}`,
-        //       data = JSON.stringify({
-        //           countryName: this.countryName,
-        //           countryAlias: this.countryAlias,
-        //           countryDescription: this.countryDescription,
-        //           countryCode: this.countryCode,
-        //           countryDialingCode: this.countryDialingCode,
-        //           countryInitial: this.countryInitial,
-        //           continentId: this.continentId})
-        //       }).then((response) => console.log(response) )
-        //   .catch(error => console.log(error))
-
-
-
       },
     toggleDetails (item) {
       this.$set(this.items[item.id], '_toggled', !item._toggled)

@@ -24,6 +24,19 @@ export default [
         to: '/add_countries',
         icon: 'cil-speedometer'
       },
+      
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Ideas',
+        to: '/ideas',
+        icon: 'cil-speedometer'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'AddIdeas',
+        to: '/add_ideas',
+        icon: 'cil-speedometer'
+      },
       {
         _name: 'CSidebarNavTitle',
         _children: ['Theme']
